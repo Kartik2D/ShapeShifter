@@ -63,11 +63,8 @@ export function createBlob(config: BlobConfig): BlobInstance {
     for (let i = 0; i < points.length; i++) {
       const curr = points[i];
       const next = points[(i + 1) % points.length];
-      const after = points[(i + 2) % points.length];
       const cp1x = curr.x + (next.x - curr.x) * 0.5;
       const cp1y = curr.y + (next.y - curr.y) * 0.5;
-      const cp2x = next.x + (after.x - next.x) * 0.3;
-      const cp2y = next.y + (after.y - next.y) * 0.3;
       d += `Q ${cp1x} ${cp1y} ${next.x} ${next.y} `;
     }
     d += 'Z';

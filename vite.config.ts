@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import basicSsl from '@vitejs/plugin-basic-ssl';
 
 export default defineConfig({
+  base: './', // Relative paths for GitHub Pages
   plugins: [
     basicSsl(), // Enables HTTPS with auto-generated certificate
   ],

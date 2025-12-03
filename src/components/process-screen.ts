@@ -2,7 +2,7 @@ import { LitElement, html, css } from 'lit';
 import { customElement, state } from 'lit/decorators.js';
 import { appState } from '../services/app-state.js';
 import { traceWithProcessing, initTracer } from '../services/shape-tracer.js';
-import { createBlob, addHoverEffect, PALETTE, getBlobColor, type BlobInstance } from '../services/blob-factory.js';
+import { createBlob, addHoverEffect, PALETTE, type BlobInstance } from '../services/blob-factory.js';
 
 @customElement('process-screen')
 export class ProcessScreen extends LitElement {

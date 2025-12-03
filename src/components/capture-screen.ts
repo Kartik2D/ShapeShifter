@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, state } from 'lit/decorators.js';
 import { appState } from '../services/app-state.js';
-import { createBlob, addHoverEffect, PALETTE, getBlobColor, type BlobInstance } from '../services/blob-factory.js';
+import { createBlob, addHoverEffect, PALETTE, type BlobInstance } from '../services/blob-factory.js';
 
 @customElement('capture-screen')
 export class CaptureScreen extends LitElement {
@@ -388,11 +388,7 @@ export class CaptureScreen extends LitElement {
       .then(localMediaStream => {
         this.stream = localMediaStream;
         
-        if ('srcObject' in video) {
-          video.srcObject = localMediaStream;
-        } else {
-          (video as HTMLVideoElement & { src: string }).src = URL.createObjectURL(localMediaStream);
-        }
+        video.srcObject = localMediaStream;
         
         video.play();
         this.streamActive = true;
